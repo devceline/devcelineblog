@@ -28,11 +28,14 @@
 		margin: 0 !important;
 		width: 100vw;
 		height: 100vh;
+		color: var(--primary-foreground-color);
+		background: var(--secondary-background-color);
 		font-family: map-get($fonts, 'main');
 	}
 
 	.Layout {
 		display: grid;
+		height: 100vh;
 		grid-template-areas:
 			'navbar'
 			'content';

@@ -1,4 +1,4 @@
 <script lang="ts">
 </script>
 
-<div class="Main">test</div>
+<div class="Main" />

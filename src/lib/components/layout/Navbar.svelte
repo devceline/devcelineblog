@@ -12,8 +12,8 @@
 	</div>
 	<div class="Navbar__nav">
 		<ul>
-			<li><a href="/">Blog</a></li>
-			<li><a href="/aboutme">About Me</a></li>
+			<li><a href="/"><Header level={3}>Blog</Header></a></li>
+			<li><a href="/aboutme"><Header level={3}>About Me</Header></a></li>
 		</ul>
 	</div>
 	<div class="Navbar__search">
@@ -28,6 +28,11 @@
 	@import 'global.scss';
 
 	.Navbar {
+		transition: all 300ms ease-in-out;
+		* {
+			transition: all 300ms ease-in-out;
+		}
+
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -36,26 +41,28 @@
 		justify-content: space-between;
 		color: var(--primary-foreground-color);
 		background-color: var(--secondary-background-color);
+		border-bottom: 1px solid var(--primary-background-color);
+		border-radius: 15%;
+		height: auto;
 
 		&__search {
 			background-color: var(--primary-foreground-color);
 			color: var(--primary-background-color);
+			border-radius: 16px;
+			padding: 0 0.25em;
 
 			form {
 				display: flex;
 				gap: 0.5em;
 				align-items: center;
 				padding: 0.25em;
-				border-radius: 16px;
-				background-color: var(--primary-foreground-color);
 
 				input {
 					border-radius: 50%;
 					padding: 0.25em;
 					border: 0;
 					outline: 0;
-					background-color: var(--primary-foreground-color);
-					color: var(--primary-background-color);
+					background-color: transparent;
 				}
 			}
 		}
@@ -70,6 +77,22 @@
 					color: var(--primary-foreground-color);
 					text-decoration: none;
 				}
+			}
+		}
+
+		&:hover {
+			background-color: var(--primary-foreground-color);
+			color: var(--secondary-background-color);
+			height: 150%;
+			transform: translateY(-15%);
+
+			.Navbar__search {
+				color: var(--primary-foreground-color);
+				background-color: var(--primary-background-color);
+			}
+
+			.Navbar__nav ul li a {
+				color: var(--primary-background-color);
 			}
 		}
 	}
