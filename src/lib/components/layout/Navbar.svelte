@@ -42,8 +42,10 @@
 		color: var(--primary-foreground-color);
 		background-color: var(--secondary-background-color);
 		border-bottom: 1px solid var(--primary-background-color);
-		border-radius: 15%;
-		height: auto;
+		border-bottom-left-radius: 25%;
+		border-bottom-right-radius: 25%;
+		border-top-left-radius: 0%;
+		border-top-right-radius: 0%;
 
 		&__search {
 			background-color: var(--primary-foreground-color);
@@ -76,6 +78,11 @@
 				li a {
 					color: var(--primary-foreground-color);
 					text-decoration: none;
+
+					&:hover {
+						border-bottom: 1px solid var(--primary-background-color);
+						background-color: var(--primary-background-color);
+					}
 				}
 			}
 		}
@@ -83,8 +90,7 @@
 		&:hover {
 			background-color: var(--primary-foreground-color);
 			color: var(--secondary-background-color);
-			height: 150%;
-			transform: translateY(-15%);
+			box-shadow: 0px 12px 24px -12px rgba(0, 0, 0, 0.25);
 
 			.Navbar__search {
 				color: var(--primary-foreground-color);
