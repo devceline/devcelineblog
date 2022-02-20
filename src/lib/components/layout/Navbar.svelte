@@ -27,12 +27,11 @@
 <style lang="scss">
 	@import 'global.scss';
 
-	.Navbar {
+	* {
 		transition: all 300ms ease-in-out;
-		* {
-			transition: all 300ms ease-in-out;
-		}
+	}
 
+	.Navbar {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
