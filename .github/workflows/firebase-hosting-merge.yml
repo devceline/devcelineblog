@@ -11,7 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: yarn && yarn build
+      - run: 
+          - cd functions
+          - yarn && yarn build
+          - cd ..
+          - yarn && yarn build
         env: 
           VITE_APIKEY: '${{ secrets.VITE_APIKEY }}'
           VITE_AUTHDOMAIN: '${{ secrets.VITE_AUTHDOMAIN }}'
