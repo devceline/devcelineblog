@@ -1,11 +1,5 @@
 import { db as adminDb } from './firebaseAdmin';
 
-export interface BlogData {
-	title: string;
-	summary: string;
-	markdownContent: string;
-}
-
 export const getBlogs = () => {
 	return new Promise((resolve) => {
 		const blogs = [];
@@ -19,5 +13,18 @@ export const getBlogs = () => {
 				resolve(blogs);
 			})
 			.catch(console.log);
+	});
+};
+
+export const getBlog = (id: string) => {
+	return new Promise((resolve) => {
+		adminDb
+			.ref('blogs')
+			.orderByChild('id')
+			.equalTo(id)
+			.get()
+			.then((blog) => {
+				resolve(blog.val());
+			});
 	});
 };

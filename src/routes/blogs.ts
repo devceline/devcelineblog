@@ -1,5 +1,6 @@
 import { getBlogs, type BlogData } from '$lib/utils/blogData';
 
+/** @type {import('@sveltejs/kit').RequestHandler} */
 export async function get() {
 	const blogData = await getBlogs();
 	const blogs = blogData;
@@ -9,8 +10,4 @@ export async function get() {
 			body: { blogs, length: blogs }
 		};
 	}
-
-	return {
-		status: 404
-	};
 }

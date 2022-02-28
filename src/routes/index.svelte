@@ -1,13 +1,25 @@
 <script lang="ts">
 	import ArticleSummary from '$lib/components/elements/ArticleSummary.svelte';
-	import type { BlogData } from '$lib/utils/blogData';
+	import type { BlogData } from '$lib/types/blogTypes';
+	import { onMount } from 'svelte';
 
 	export let blogs: BlogData[] = [];
+
+	const getBlogs = () => {
+		console.log('aa');
+		fetch('/blogs')
+			.then((v) => v.json())
+			.then((v) => {
+				blogs = v.blogs;
+			});
+	};
+
+	onMount(() => getBlogs());
 </script>
 
-<div class="Main">
+<div on:click={() => getBlogs()} class="Main">
 	{#each blogs as blog (blog.title)}
-		<ArticleSummary title={blog.title} summary={blog.summary} />
+		<ArticleSummary id={blog.id} title={blog.title} summary={blog.summary} />
 	{/each}
 </div>
 

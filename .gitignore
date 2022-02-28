@@ -2,8 +2,10 @@
 firebase-serviceaccount.json
 node_modules
 /build
+blogBuild
 /.svelte-kit
 /package
 .env
 .env.*
 !.env.example
+.firebase

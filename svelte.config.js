@@ -1,6 +1,5 @@
 import firebase from 'svelte-adapter-firebase';
-import adapter from '@sveltejs/adapter-auto';
-
+// import firebase from '@sveltejs/adapter-auto'
 import preprocess from 'svelte-preprocess';
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -12,7 +11,7 @@ const config = {
 	}),
 
 	kit: {
-		adapter: adapter()
+    adapter: firebase()
 	}
 };
 

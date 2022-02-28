@@ -1,23 +1,30 @@
 {
-	"firestore": {
-		"rules": "firestore.rules",
-		"indexes": "firestore.indexes.json"
-	},
-	"functions": {
-		"predeploy": "yarn --prefix \"$RESOURCE_DIR\" build",
-		"source": "./functions"
-	},
-	"hosting": {
-		"public": "blogBuildFiles",
-		"rewrites": [
-			{
-				"source": "**",
-				"function": "blogServer"
-			}
-		],
-		"ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
-	},
-	"storage": {
-		"rules": "storage.rules"
-	}
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "functions": {
+    "predeploy": "yarn --prefix \"$RESOURCE_DIR\" build",
+    "source": "./functions"
+  },
+  "hosting": {
+    "public": "blogBuild",
+    "rewrites": [
+      {
+        "source": "**",
+        "function": "blogServer"
+      }
+    ],
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  },
+  "storage": {
+    "rules": "storage.rules"
+  },
+  "database": {
+    "rules": "database.rules.json"
+  }
 }
