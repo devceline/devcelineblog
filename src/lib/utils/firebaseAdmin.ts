@@ -1,5 +1,4 @@
-import { initializeApp, credential, type AppOptions } from 'firebase-admin';
-import { getFirestore } from 'firebase-admin/firestore';
+import firebaseAdmin, { type AppOptions } from 'firebase-admin';
 
 const serviceAccountJson = {
 	...JSON.parse(import.meta.env.VITE_SERVICE_ACCOUNT_JSON)
@@ -11,7 +10,7 @@ const formattedServiceAccount = {
 	projectId: serviceAccountJson.project_id
 };
 
-const credentials = credential.cert(formattedServiceAccount);
+const credentials = firebaseAdmin.credential.cert(formattedServiceAccount);
 
 const firebaseConfig: AppOptions = {
 	projectId: import.meta.env.VITE_PROJECTID,
@@ -21,7 +20,7 @@ const firebaseConfig: AppOptions = {
 	databaseURL: import.meta.env.VITE_DATABASE_URL
 };
 
-const app = initializeApp({
+const app = firebaseAdmin.initializeApp({
 	...firebaseConfig
 });
 

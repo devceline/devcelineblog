@@ -1,18 +1,16 @@
-
-
-/* Colors */ 
+/* Colors */
 
 $theme-colors: (
-	"bistre": #a0583c,
-	"dark-sienna": #c08267,
-	"liver": hsla(15, 25%, 33%, 1),
-	"ivory": #ccb9b1
+	'bistre': #a0583c,
+	'dark-sienna': #c08267,
+	'liver': hsla(15, 25%, 33%, 1),
+	'ivory': #ccb9b1
 );
 
-/* Fonts */ 
+/* Fonts */
 
 $fonts: (
-	"main": (
+	'main': (
 		'Signika Negative',
 		sans-serif
 	)
@@ -22,8 +20,8 @@ $fonts: (
 
 * {
 	box-sizing: border-box;
-  padding: 0 ;
-  margin: 0;
+	padding: 0;
+	margin: 0;
 }
 
 :root {
