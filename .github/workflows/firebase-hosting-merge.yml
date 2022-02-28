@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: yarn && yarn build
-        with: 
+        env: 
           VITE_APIKEY: '${{ secrets.VITE_APIKEY }}'
           VITE_AUTHDOMAIN: '${{ secrets.VITE_AUTHDOMAIN }}'
           VITE_PROJECTID: '${{ secrets.VITE_PROJECTID }}'
