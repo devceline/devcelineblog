@@ -6,7 +6,7 @@ export async function get({ params }) {
 
 	if (blog) {
 		return {
-			body: { blog: blog['0'] }
+			body: { blog }
 		};
 	}
 }

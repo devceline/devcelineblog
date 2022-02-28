@@ -17,6 +17,10 @@
 	onMount(() => getBlogs());
 </script>
 
+<svelte:head>
+	<title>Celine's Blog</title>
+</svelte:head>
+
 <div on:click={() => getBlogs()} class="Main">
 	{#each blogs as blog (blog.title)}
 		<ArticleSummary id={blog.id} title={blog.title} summary={blog.summary} />

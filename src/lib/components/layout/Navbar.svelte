@@ -1,13 +1,14 @@
 <script lang="ts">
 	import Icon from 'svelte-awesome';
 	import { search } from 'svelte-awesome/icons';
+	import { goto } from '$app/navigation';
 	import Header from '../typography/Header.svelte';
 
 	const handleSearch = () => {};
 </script>
 
 <div class="Navbar">
-	<div class="Navbar__title">
+	<div on:click={() => goto('/')} class="Navbar__title">
 		<Header level={1}>DevCeline.</Header>
 	</div>
 	<div class="Navbar__nav">
@@ -15,12 +16,6 @@
 			<li><a href="/"><Header level={3}>Blog</Header></a></li>
 			<li><a href="/aboutme"><Header level={3}>About Me</Header></a></li>
 		</ul>
-	</div>
-	<div class="Navbar__search">
-		<form on:submit|preventDefault|stopPropagation={handleSearch}>
-			<input type="text" />
-			<Icon data={search} />
-		</form>
 	</div>
 </div>
 
@@ -37,6 +32,8 @@
 		align-items: center;
 		gap: 1em;
 		padding: 1rem;
+		padding-left: 2rem;
+		padding-right: 2rem;
 		justify-content: space-between;
 		color: var(--primary-foreground-color);
 		background-color: var(--secondary-background-color);
@@ -46,7 +43,12 @@
 		border-top-left-radius: 0%;
 		border-top-right-radius: 0%;
 
+		&__title {
+			cursor: pointer;
+		}
+
 		&__search {
+			width: 75%;
 			background-color: var(--primary-foreground-color);
 			color: var(--primary-background-color);
 			border-radius: 16px;
@@ -54,12 +56,14 @@
 
 			form {
 				display: flex;
+				width: 100%;
 				gap: 0.5em;
 				align-items: center;
 				padding: 0.25em;
 
 				input {
 					border-radius: 50%;
+					width: 100%;
 					padding: 0.25em;
 					border: 0;
 					outline: 0;
@@ -106,6 +110,14 @@
 		.Navbar {
 			flex-direction: row;
 			gap: unset;
+
+			&__search {
+				width: unset;
+				form,
+				input {
+					width: unset;
+				}
+			}
 		}
 	}
 </style>

@@ -18,10 +18,13 @@
 	import Header from '$lib/components/typography/Header.svelte';
 	import type { BlogData } from '$lib/types/blogTypes';
 	import { marked } from 'marked';
-	import { onMount } from 'svelte';
 
 	export let blog: BlogData;
 </script>
+
+<svelte:head>
+	<title>{blog.title}</title>
+</svelte:head>
 
 <div class="Blog">
 	<header class="Blog__title">
