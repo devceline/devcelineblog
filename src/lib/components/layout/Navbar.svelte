@@ -35,13 +35,13 @@
 		padding-left: 2rem;
 		padding-right: 2rem;
 		justify-content: space-between;
-		color: var(--primary-foreground-color);
-		background-color: var(--secondary-background-color);
 		border-bottom: 1px solid var(--primary-background-color);
 		border-bottom-left-radius: 25%;
 		border-bottom-right-radius: 25%;
 		border-top-left-radius: 0%;
 		border-top-right-radius: 0%;
+		background-color: var(--primary-foreground-color);
+		color: var(--secondary-background-color);
 
 		&__title {
 			cursor: pointer;
@@ -79,7 +79,7 @@
 				gap: 1em;
 
 				li a {
-					color: var(--primary-foreground-color);
+					color: var(--secondary-background-color);
 					text-decoration: none;
 
 					&:hover {
@@ -108,8 +108,14 @@
 
 	@media only screen and (min-width: 700px) {
 		.Navbar {
+			background-color: var(--secondary-background-color);
 			flex-direction: row;
 			gap: unset;
+			color: var(--primary-foreground-color);
+
+			&__nav ul li a {
+				color: var(--primary-foreground-color);
+			}
 
 			&__search {
 				width: unset;
