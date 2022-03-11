@@ -23,6 +23,11 @@
 </script>
 
 <svelte:head>
+	<meta name="twitter:title" content={blog.title} />
+	<meta name="twitter:description" content={blog.summary} />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content={blog.title} />
+	<meta property="og:type" content="article" />
 	<title>{blog.title}</title>
 </svelte:head>
 
