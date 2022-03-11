@@ -79,10 +79,12 @@
 				gap: 1em;
 
 				li a {
+					display: inline;
 					color: var(--secondary-background-color);
 					text-decoration: none;
 
 					&:hover {
+						transform: unset;
 						border-bottom: 1px solid var(--primary-background-color);
 						background-color: var(--primary-background-color);
 					}

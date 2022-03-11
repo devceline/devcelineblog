@@ -55,6 +55,18 @@
 		}
 	}
 
+	:global(a) {
+		transition: all 0.2s ease-in-out;
+		display: inline-block;
+		font-weight: 600;
+		text-decoration: none;
+		color: var(--primary-background-color) !important;
+	}
+
+	:global(a:hover) {
+		transform: translateY(-10%) translateX(-2%);
+	}
+
 	@media only screen and (min-width: 600px) {
 		.Blog {
 			width: 50%;
