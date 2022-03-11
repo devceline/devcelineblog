@@ -54,4 +54,11 @@
 			text-transform: uppercase;
 		}
 	}
+
+	@media only screen and (min-width: 600px) {
+		.Blog {
+			width: 50%;
+			margin: 0 auto;
+		}
+	}
 </style>
