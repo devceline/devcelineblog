@@ -9,3 +9,4 @@ blogBuild
 .env.*
 !.env.example
 .firebase
+.secret
